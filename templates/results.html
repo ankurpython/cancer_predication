@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .result-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .prediction {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .confidence {
+            font-size: 1rem;
+            color: #555;
+        }
+        .patient-data {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .btn-back {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-back:hover {
+            box-shadow: 0 10px 20px rgba(102,126,234,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Prediction Result</h2>
+        <div class="prediction">{{ output1 }}</div>
+        <div class="confidence">{{ output2 }}</div>
+
+        <div class="patient-data">
+            <h3>Entered Patient Data:</h3>
+            <p>Radius Mean: {{ query1 }}</p>
+            <p>Perimeter Mean: {{ query2 }}</p>
+            <p>Area Mean: {{ query3 }}</p>
+            <p>Concavity Mean: {{ query4 }}</p>
+            <p>Concave Points Mean: {{ query5 }}</p>
+        </div>
+
+        <a href="/" class="btn-back">🔙 Back to Home</a>
+    </div>
+</body>
+</html>

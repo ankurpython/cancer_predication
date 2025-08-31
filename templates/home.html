@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #f7fafc;
+        }
+        .form-group input:focus {
+            border-color: #667eea;
+            outline: none;
+            background: white;
+            box-shadow: 0 5px 15px rgba(102,126,234,0.2);
+        }
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: 0.3s;
+        }
+        .btn:hover {
+            box-shadow: 0 10px 20px rgba(102,126,234,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔬 Breast Cancer Prediction</h1>
+            <p>Enter the 5 feature values to get a prediction</p>
+        </div>
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="radius_mean">Radius Mean</label>
+                <input type="number" step="any" name="query1" required>
+            </div>
+            <div class="form-group">
+                <label for="perimeter_mean">Perimeter Mean</label>
+                <input type="number" step="any" name="query2" required>
+            </div>
+            <div class="form-group">
+                <label for="area_mean">Area Mean</label>
+                <input type="number" step="any" name="query3" required>
+            </div>
+            <div class="form-group">
+                <label for="concavity_mean">Concavity Mean</label>
+                <input type="number" step="any" name="query4" required>
+            </div>
+            <div class="form-group">
+                <label for="concave_points_mean">Concave Points Mean</label>
+                <input type="number" step="any" name="query5" required>
+            </div>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
