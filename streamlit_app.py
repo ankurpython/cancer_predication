@@ -72,7 +72,6 @@ def train_model():
 
 model = train_model()
 
-
 if st.button("Predict"):
     input_data = [[radius_mean, perimeter_mean, area_mean, concavity_mean, concave_points_mean]]
     new_df = pd.DataFrame(input_data, columns=["radius_mean", "perimeter_mean", "area_mean", "concavity_mean",
@@ -90,6 +89,7 @@ if st.button("Predict"):
                     f"<h3>✅ The Patient is not diagnosed with Cancer</h3>"
                     f"<p>Confidence: {probability[0] * 100:.2f}%</p></div>", unsafe_allow_html=True)
 
+    # Show the table inside the button block
+    st.subheader("Entered Patient Data:")
+    st.table(new_df)
 
-st.subheader("Entered Patient Data:")
-st.table(new_df)
